@@ -1,0 +1,115 @@
+body, table td {
+	font-size:12px; 
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+#upload_area { 
+
+.error_msg { font-weight:bold; color:#E00; }
+.ok_msg { font-weight:bold; color:#0A0; }
+
+#school_box {
+	background: #f9f9f9;
+	border: 1px solid #ccc;
+	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
+	-moz-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
+	-webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
+	padding: 10px;
+}
+
+#distance { float:right; text-decoration:none; font-size:14px; color:#888; }
+
+#school_name { border-bottom: 1px thin #36F; font-weight:bold; font-size:12px; color:#36F; }
+
+#acc_logo { }
+
+#title { font-size:20px; font-weight:bold; color:#F60; padding-left:10px; padding-bottom:10px; }
+#message { font-size:14px; font-weight:bold; color:#F63; padding-left:10px; }
+
+#suburb_postcode_form { padding-left:10px; }
+
+#suburb_postcode {
+	width: 221px;
+	background: transparent url('images/bg_1.jpg') no-repeat;
+	color : #747862;
+	height:15px;
+	border:0;
+	padding:4px 8px;
+	margin-bottom:0px;
+}
+
+/* --------------- IMG POPUP START ----------------------*/
+.gallerycontainer{
+position: relative;
+/*Add a height attribute and set to largest image's height to prevent overlaying*/
+}
+
+.thumbnail img{
+border: 1px solid white;
+/*margin: 0 5px 5px 0;*/
+}
+
+.thumbnail:hover{
+background-color: transparent;
+}
+
+.thumbnail:hover img{
+border: 1px solid blue;
+}
+
+.thumbnail span{ /*CSS for enlarged image*/
+position: absolute;
+background-color:#fff;
+padding: 5px;
+left: -500px;
+/*border: 1px dashed gray;*/
+visibility: hidden;
+color: black;
+text-decoration: none;
+}
+
+.thumbnail span img{ /*CSS for enlarged image*/
+border-width: 0;
+padding: 2px;
+}
+
+.thumbnail:hover span{ /*CSS for enlarged image*/
+visibility: visible;
+top: 40;
+left: 230px; /*position where enlarged image should offset horizontally */
+z-index: 50;
+}
+/* --------------- IMG POPUP END ----------------------*/
+
+<!-- this is the CSS code to manipulate the auto-complete listing: START -->  
+div.auto_complete {
+  width: 350px;
+  background: #fff;
+}
+div.auto_complete ul {
+  border:1px solid #888;
+  margin:0;
+  padding:0;
+  width:100%;
+  list-style-type:none;
+}
+div.auto_complete ul li {
+  margin:0;
+  padding:3px;
+  background-color: #fff;
+  display:block;
+  cursor:default;
+  overflow:hidden;
+}
+div.auto_complete ul li.selected {
+  background-color: #f9d7a1;
+  cursor:pointer;
+  font-weight:bold;	
+}
+div.auto_complete ul strong.highlight {
+  color: #800; 
+  margin:0;
+  padding:0;
+}
+<!-- this is the CSS code to manipulate the auto-complete listing: END -->  			
+			

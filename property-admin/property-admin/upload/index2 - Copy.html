@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>class.upload.php test forms</title>
+
+    <style>
+        fieldset {
+            width: 50%;
+            margin: 15px 0px 25px 0px;
+            padding: 15px;
+        }
+        legend {
+            font-weight: bold;
+        }
+        .button {
+            text-align: right;
+        }
+        .button input {
+            font-weight: bold;
+        }
+		body { border:0px; margin:0px; padding:0px; }
+    </style>
+<script language="javascript" type="text/javascript">
+<!-- 
+//Browser Support Code
+function ajaxFunction(){
+	var ajaxRequest;  // The variable that makes Ajax possible!
+	
+	try{
+		// Opera 8.0+, Firefox, Safari
+		ajaxRequest = new XMLHttpRequest();
+	} catch (e){
+		// Internet Explorer Browsers
+		try{
+			ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+		} catch (e) {
+			try{
+				ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+			} catch (e){
+				// Something went wrong
+				alert("Your browser broke!");
+				return false;
+			}
+		}
+	}
+	// Create a function that will receive data sent from the server
+	ajaxRequest.onreadystatechange = function(){
+		if(ajaxRequest.readyState == 4){
+			var ajaxDisplay = document.getElementById('ajaxDiv');
+			ajaxDisplay.innerHTML = ajaxRequest.responseText;
+		}
+	}
+	var my_field = document.getElementsByName('my_field');
+	//alert (cbtracks.length);
+	<?php wp_get_current_user(); $current_user = wp_get_current_user(); ?>
+	data = checkboxValues(cbtracks);
+	//alert (data.length);
+	var queryString = "?my_field=" + my_field;
+	ajaxRequest.open("GET", "upload2.php" + queryString, true);
+	ajaxRequest.send(null); 
+	//alert(queryString);
+	//alert(escape("&"));
+}
+
+function checkboxValues(name){
+    var nodes = name;
+    var n;
+    var values = "";
+	var arrCount = 0;
+	//alert (nodes.length);
+    for (var i = 0; i<nodes.length; i++) {
+        if (nodes[i].checked == true) {
+			if(arrCount>0){
+			  values += ","+nodes[i].value;
+			}			
+			else{
+			  values += ""+nodes[i].value;
+			}
+			arrCount+=1;			
+        }
+    }
+	//values += "," + "<?php echo $current_user->ID; ?>";
+    return values;
+}
+
+
+
+//-->
+</script>
+</head>
+
+<body>
+
+
+        <form name="form2" enctype="multipart/form-data" method="post" action="upload2.php" />
+            <input type="file" size="20" name="my_field" value="" />
+            <input type="submit" name="Submit" value="upload" />
+        </form>
+
+<span id='ajaxDiv'></span>
+</body>
+
+</html>
